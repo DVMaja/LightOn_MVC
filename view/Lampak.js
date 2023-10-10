@@ -11,12 +11,12 @@ class Lampak {
         this.#vizszintesDb = vizszintesDb;
         this.SzuloElem = Szuloelem;
         this.#allapot = allapot;
-        console.log("Lampak állapot " + this.#allapot); 
-        this.init();
+        //console.log("Lampak állapot " + this.#allapot); 
+        this.init();        
+        
     }
 
     init(){
-
         this.#htmlOsszarak();
         this.elemekLetrehozasa();
         this.LAMPAELEM.setSzin();
@@ -31,6 +31,9 @@ class Lampak {
         for (let elemDb = 0; elemDb < this.#fuggolegesDB * this.#vizszintesDb; elemDb++) {
             //console.log("elemek száma: "+ elemDb);
             this.LAMPAELEM = new LampaElem($(".elemekHelye"), elemDb, this.#allapot);
+            //this.LAMPAELEM.getIndex();
+            //const
+
         }
     }
     
