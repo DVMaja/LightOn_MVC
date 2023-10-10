@@ -5,18 +5,21 @@ class Controller {
     #vizszintesElemSzam;
     #fuggolegesElemSzam;
 
-    constructor() {
-        this.LAMPAKMODELL = new LampakModell();
-
+    constructor() {        
         this.#vizszintesElemSzam = 3;
         this.#fuggolegesElemSzam = 3;
+        this.dbSzam = this.#vizszintesElemSzam * this.#fuggolegesElemSzam;
+        this.LAMPAKMODELL = new LampakModell(this.dbSzam);
+        let modell = this.LAMPAKMODELL;
 
         this.LAMPAK = new Lampak(this.#vizszintesElemSzam, this.#fuggolegesElemSzam,
-            $(".jatekter"), this.LAMPAKMODELL.getAllapot());
-        console.log(this.LAMPAK.getLampaLista());
-            
-        
-        this.LAMPAKMODELL.setAllapot();
+            $(".jatekter"), this.LAMPAKMODELL.getAllapot(), modell);
+
+        //console.log(this.LAMPAK.getLampaLista());
+
+        //this.LAMPAKMODELL.LampakModel(this.LAMPAK.getLampaLista());
+        //this.LAMPAKMODELL.init(this.LAMPAK.getLampaLista());
+        //this.LAMPAKMODELL.setAllapot();
 
 
     }

@@ -7,9 +7,9 @@ class LampaElem {
         //console.log("LampaElem elérhető");
         this.#index = index;        
         this.#kattinthato = true;
-        this.#allapot = allapot;
-        
+        this.#allapot = allapot;        
         this.SzuloElem = Szuloelem;
+
         this.#htmlOsszarak();
         this.Kor = $(".kor:last-child");
         this.setSzin();
@@ -18,8 +18,9 @@ class LampaElem {
         this.Kor.on("click", () => {
             if (this.#kattinthato) {
                 this.#sajatEsemeny();
-                this.#kattinthato = false;                
-                console.log(this.Kor);                
+                this.#kattinthato = false;    
+                this.setSzin();            
+                //console.log(this.Kor);                
             }
         })        
     }   
@@ -30,14 +31,13 @@ class LampaElem {
     }
 
     setSzin() {
-        if (this.#allapot == true) {
-            this.Kor.css(`background-color`, `darkgreen`);            
-            this.#allapot = true;
-            console.log(this.#allapot);
-        } else {
+        if (this.#allapot == true) {            
+            this.Kor.css(`background-color`, `darkgreen`);  
+            //this.#allapot = true; 
+        } else {            
             this.Kor.css(`background-color`, `orange`);
-            this.#allapot = false;
-            console.log(this.#allapot);
+            //this.#allapot = false;
+            //console.log(this.#allapot);
         }
     }    
 

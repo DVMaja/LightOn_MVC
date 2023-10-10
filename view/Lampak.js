@@ -6,21 +6,28 @@ class Lampak {
     #allapot;
 
 
-    constructor(vizszintesDb, fuggolegesDB, Szuloelem, allapot) {
+    constructor(vizszintesDb, fuggolegesDB, Szuloelem, allapot, modell) {
         this.#fuggolegesDB = fuggolegesDB;
         this.#vizszintesDb = vizszintesDb;
         this.SzuloElem = Szuloelem;
         this.#allapot = allapot;
+        this.modell = modell;
         this.lampaLista = [];
         //console.log("Lampak állapot " + this.#allapot); 
-        this.init();        
+        this.init();    
+        /* $(window).on("kattintas", (event) => {   
+            console.log(event.detail);  
+            this.modell.setAllpot(event.detail.getIndex()) 
+
+            event.detail.setErtek(this.MODELL.getAllapot());    
         
+        }) */
     }
 
     init(){
         this.#htmlOsszarak();
         this.elemekLetrehozasa();
-        this.LAMPAELEM.setSzin();
+        //this.LAMPAELEM.setSzin();       
     }
 
     #htmlOsszarak() {
@@ -28,8 +35,7 @@ class Lampak {
         this.SzuloElem.append(txt);
     }
 
-    elemekLetrehozasa() {
-        
+    elemekLetrehozasa() {        
         for (let elemDb = 0; elemDb < this.#fuggolegesDB * this.#vizszintesDb; elemDb++) {
             //console.log("elemek száma: "+ elemDb);
             this.LAMPAELEM = new LampaElem($(".elemekHelye"), elemDb, this.#allapot);
