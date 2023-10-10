@@ -9,11 +9,12 @@ class Controller {
         this.LAMPAKMODELL = new LampakModell();
 
         this.#vizszintesElemSzam = 3;
-        this.#fuggolegesElemSzam = 3;       
+        this.#fuggolegesElemSzam = 3;
 
-        this.LAMPAK = new Lampak(this.#vizszintesElemSzam, this.#fuggolegesElemSzam, $(".jatekter"));
+        this.LAMPAK = new Lampak(this.#vizszintesElemSzam, this.#fuggolegesElemSzam,
+            $(".jatekter"), this.LAMPAKMODELL.getAllapot());
         
-        this.LAMPAKMODELL.LampakModel()
+        this.LAMPAKMODELL.setAllapot();
 
 
     }

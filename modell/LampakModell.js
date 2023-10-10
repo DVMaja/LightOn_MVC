@@ -2,15 +2,29 @@ class LampakModell {
     #allapot;
     #allapotList = [];
 
-    constructor() {
-        this.#allapot = true;
-
+    constructor(lampa) {
+        this.#allapot = false;
+        this.init();
         this.setAllapot(this.#allapot);
+
+    }
+
+    init(lampa) {
+        let aktualisAllapot;
+        let esely = Math.floor((Math.random() * 4) + 1);
+
+        if (esely == 1) {
+            aktualisAllapot = true;
+            this.setAllapot(aktualisAllapot);
+        } else {
+            aktualisAllapot = false;
+            this.setAllapot(aktualisAllapot);
+        }
     }
 
     LampakModel(id) {
         this.#allapotList;
-        
+
 
     }
     setAllapot(aktualisAllapot) {
@@ -20,7 +34,7 @@ class LampakModell {
     getAllapot() {
         return this.#allapot;
     }
-    getList(){
+    getList() {
         return this.#allapotList;
     }
 
