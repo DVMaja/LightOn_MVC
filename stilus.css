@@ -1,0 +1,20 @@
+.kor {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 3px solid black;
+    display: inline-block;
+}
+
+.elemekHelye {
+    margin: auto;    
+    width: 400px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    gap: 5px;
+}
+.jatekter {
+    border: 3px double black;
+    padding: 5px;
+}

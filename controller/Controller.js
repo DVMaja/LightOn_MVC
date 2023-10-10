@@ -1,4 +1,4 @@
-import Modell from "../modell/Modell.js";
+import LampakModell from "../modell/LampakModell.js";
 import Lampak from "../view/Lampak.js";
 
 class Controller {
@@ -6,12 +6,14 @@ class Controller {
     #fuggolegesElemSzam;
 
     constructor() {
-        this.MODELL = new Modell();
-        
-        this.#vizszintesElemSzam = 3;
-        this.#fuggolegesElemSzam = 3;
+        this.LAMPAKMODELL = new LampakModell();
 
-        this.LAMPAK = new Lampak(this.#vizszintesElemSzam, this.#fuggolegesElemSzam, $(".jatekter")); 
+        this.#vizszintesElemSzam = 3;
+        this.#fuggolegesElemSzam = 3;       
+
+        this.LAMPAK = new Lampak(this.#vizszintesElemSzam, this.#fuggolegesElemSzam, $(".jatekter"));
+        
+        this.LAMPAKMODELL.LampakModel()
 
 
     }
