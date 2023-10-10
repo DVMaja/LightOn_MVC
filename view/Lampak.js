@@ -11,6 +11,7 @@ class Lampak {
         this.#vizszintesDb = vizszintesDb;
         this.SzuloElem = Szuloelem;
         this.#allapot = allapot;
+        this.lampaLista = [];
         //console.log("Lampak állapot " + this.#allapot); 
         this.init();        
         
@@ -28,14 +29,17 @@ class Lampak {
     }
 
     elemekLetrehozasa() {
+        
         for (let elemDb = 0; elemDb < this.#fuggolegesDB * this.#vizszintesDb; elemDb++) {
             //console.log("elemek száma: "+ elemDb);
             this.LAMPAELEM = new LampaElem($(".elemekHelye"), elemDb, this.#allapot);
             //this.LAMPAELEM.getIndex();
-            //const
-
+            this.lampaLista.push(this.LAMPAELEM);
         }
     }
-    
+
+    getLampaLista(){
+        return this.lampaLista;
+    }    
 }
 export default Lampak;

@@ -13,6 +13,7 @@ class Controller {
 
         this.LAMPAK = new Lampak(this.#vizszintesElemSzam, this.#fuggolegesElemSzam,
             $(".jatekter"), this.LAMPAKMODELL.getAllapot());
+        console.log(this.LAMPAK.getLampaLista());
             
         
         this.LAMPAKMODELL.setAllapot();
